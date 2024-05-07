@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+
+<div th:if="${tasks.isEmpty()}">
+    <p>У вас пока нет задач</p>
+    <hr/>
+</div>
+<form>
+
+</form>
+<div th:if="${!tasks.isEmpty()}">
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Created At</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.title}">Title</td>
+            <td th:text="${task.description}">Description</td>
+            <td th:text="${task.dueDate}">Due Date</td>
+            <td th:text="${task.priority}">Priority</td>
+            <td th:text="${task.status}">Status</td>
+            <td th:text="${task.createdAt}">Created At</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br/>
+    <hr/>
+
+    <a href="/tasks/new">Create Task</a>
+</div>
+
+</body>
+</html>

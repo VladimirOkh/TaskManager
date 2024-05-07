@@ -1,14 +1,14 @@
 package ru.okhremenko.taskmanagementsystem.repositories;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.okhremenko.taskmanagementsystem.models.Person;
+import ru.okhremenko.taskmanagementsystem.models.Task;
 
 import java.util.Optional;
 
-
 @Repository
-public interface PeopleRepository extends JpaRepository<Person, Integer> {
-    Optional<Person> findByUsername(String username);
+public interface TaskRepository extends JpaRepository<Task, Integer> {
 
-    Optional<Person> findById(Integer id);
+    Optional<Task> findAllByAssignedToId(int id);
 }

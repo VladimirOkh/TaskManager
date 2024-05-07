@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/auth/login")
                 .loginProcessingUrl("/process_login")
-                .defaultSuccessUrl("/menu", true) // В случае успешной аутентификации перенаправляем
+                .defaultSuccessUrl("/tasks/index", true)
                 .failureUrl("/auth/login?error")
                 .and()
                 .logout()
